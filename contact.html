@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문의하기 - 크리에이터 플랫폼</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard.css" rel="stylesheet">
+    <style>
+        body { font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif; }
+        .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
+                        <span class="text-white font-bold text-lg">C</span>
+                    </div>
+                    <div>
+                        <h1 class="text-xl font-bold text-gray-900">크리에이터 플랫폼</h1>
+                        <p class="text-xs text-gray-500">문의하기</p>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="index.html" class="text-gray-700 hover:text-blue-600">홈</a>
+                    <a href="register.html" class="text-gray-700 hover:text-blue-600">등록체험</a>
+                    <a href="data-analysis.html" class="text-gray-700 hover:text-blue-600">데이터분석</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Contact Section -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h1 class="text-4xl font-bold text-gray-900 mb-4">📞 문의하기</h1>
+                <p class="text-xl text-gray-600">궁금한 점이 있으시면 언제든 연락해주세요!</p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+                <!-- Contact Form -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-6">📧 이메일 문의</h2>
+                    
+                    <form id="contactForm" class="space-y-6">
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">이름 *</label>
+                                <input type="text" id="contactName" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="홍길동">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">연락처</label>
+                                <input type="tel" id="contactPhone" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="010-1234-5678">
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">이메일 *</label>
+                            <input type="email" id="contactEmail" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="example@email.com">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">문의 유형</label>
+                            <select id="inquiryType" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                <option value="">선택해주세요</option>
+                                <option value="사업자등록">사업자등록 관련</option>
+                                <option value="플랫폼연동">플랫폼 연동 문의</option>
+                                <option value="기술지원">기술적 지원 요청</option>
+                                <option value="정책제안">정책 제안 사항</option>
+                                <option value="기타">기타 문의</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">제목 *</label>
+                            <input type="text" id="contactSubject" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="문의 제목을 입력해주세요">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">문의내용 *</label>
+                            <textarea id="contactMessage" required rows="6" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none" placeholder="자세한 문의 내용을 작성해주세요..."></textarea>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <input type="checkbox" id="privacyAgree" required class="mr-3 w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500">
+                            <label for="privacyAgree" class="text-sm text-gray-700">
+                                개인정보 수집 및 이용에 동의합니다. <a href="#" class="text-blue-600 hover:underline">[상세보기]</a>
+                            </label>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-blue-600 text-white py-3 px-6 rounded-lg hover:bg-blue-700 transition-colors font-semibold">
+                            💌 문의하기
+                        </button>
+                    </form>
+                </div>
+                
+                <!-- Contact Info -->
+                <div class="space-y-8">
+                    <!-- Office Info -->
+                    <div class="bg-white rounded-2xl p-8 shadow-lg">
+                        <h2 class="text-2xl font-bold text-gray-900 mb-6">🏢 연락처 정보</h2>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start space-x-4">
+                                <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <span class="text-2xl">🏢</span>
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold text-gray-900">대구광역시 기업지원과</h3>
+                                    <p class="text-gray-600 text-sm mt-1">규제혁신 담당팀</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-4">
+                                <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <span class="text-2xl">📧</span>
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold text-gray-900">이메일</h3>
+                                    <p class="text-blue-600 text-sm mt-1">angellimsc@korea.kr</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-4">
+                                <div class="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <span class="text-2xl">☎️</span>
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold text-gray-900">전화번호</h3>
+                                    <p class="text-gray-600 text-sm mt-1">053-803-5859</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-4">
+                                <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <span class="text-2xl">🕐</span>
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold text-gray-900">운영시간</h3>
+                                    <p class="text-gray-600 text-sm mt-1">평일 09:00 ~ 18:00<br>점심시간 12:00 ~ 13:00</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-4">
+                                <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <span class="text-2xl">📍</span>
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold text-gray-900">주소</h3>
+                                    <p class="text-gray-600 text-sm mt-1">
+                                        대구광역시 북구 연암로 40<br>
+                                        대구광역시 산격청사 기업지원과
+                                    </p>
+                                    <button class="mt-2 text-blue-600 hover:text-blue-800 text-sm font-medium">
+                                        🗺️ 지도에서 보기
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Quick Help -->
+                    <div class="bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl p-8 border border-blue-200">
+                        <h2 class="text-2xl font-bold text-blue-900 mb-6">⚡ 빠른 도움말</h2>
+                        
+                        <div class="space-y-4">
+                            <div class="bg-white p-4 rounded-lg shadow-sm">
+                                <h3 class="font-semibold text-gray-900 mb-2">💼 사업자등록 관련</h3>
+                                <p class="text-gray-600 text-sm">원스톱 플랫폼을 통한 간편 등록 절차</p>
+                            </div>
+                            
+                            <div class="bg-white p-4 rounded-lg shadow-sm">
+                                <h3 class="font-semibold text-gray-900 mb-2">🔗 플랫폼 연동 문의</h3>
+                                <p class="text-gray-600 text-sm">YouTube, Instagram 등 API 연동 지원</p>
+                            </div>
+                            
+                            <div class="bg-white p-4 rounded-lg shadow-sm">
+                                <h3 class="font-semibold text-gray-900 mb-2">🛠️ 기술적 지원 요청</h3>
+                                <p class="text-gray-600 text-sm">시스템 오류 및 기능 개선 제안</p>
+                            </div>
+                            
+                            <div class="bg-white p-4 rounded-lg shadow-sm">
+                                <h3 class="font-semibold text-gray-900 mb-2">📝 정책 제안 사항</h3>
+                                <p class="text-gray-600 text-sm">규제 개선 및 신규 정책 아이디어</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-gray-900 mb-12 text-center">❓ 자주 묻는 질문</h2>
+            
+            <div class="max-w-4xl mx-auto space-y-6">
+                <div class="bg-gray-50 rounded-lg p-6">
+                    <h3 class="font-bold text-gray-900 mb-3">Q: 실제 서비스는 언제 시작되나요?</h3>
+                    <p class="text-gray-700">현재는 공모전 제안서 단계이며, 채택 시 6개월 내 구축을 목표로 하고 있습니다. 실제 서비스 시작은 2026년 상반기 예정입니다.</p>
+                </div>
+                
+                <div class="bg-gray-50 rounded-lg p-6">
+                    <h3 class="font-bold text-gray-900 mb-3">Q: 어떤 플랫폼들이 지원되나요?</h3>
+                    <p class="text-gray-700">YouTube, Instagram, 네이버 블로그, 카카오 스토리 등 주요 플랫폼을 우선 지원하며, 서비스 확장에 따라 추가 플랫폼 연동을 계획하고 있습니다.</p>
+                </div>
+                
+                <div class="bg-gray-50 rounded-lg p-6">
+                    <h3 class="font-bold text-gray-900 mb-3">Q: 기존 사업자등록과의 차이점은?</h3>
+                    <p class="text-gray-700">플랫폼 자동연동, AI 기반 업종추천, 원스톱 처리로 기존 7-10일 소요 절차를 24시간 내로 단축할 수 있습니다.</p>
+                </div>
+                
+                <div class="bg-gray-50 rounded-lg p-6">
+                    <h3 class="font-bold text-gray-900 mb-3">Q: 비용은 얼마나 드나요?</h3>
+                    <p class="text-gray-700">기본 사업자등록은 무료이며, 부가 서비스(세무상담, 플랫폼 연동 등)는 합리적인 수준의 이용료가 책정될 예정입니다.</p>
+                </div>
+                
+                <div class="bg-gray-50 rounded-lg p-6">
+                    <h3 class="font-bold text-gray-900 mb-3">Q: 개인정보 보안은 어떻게 보장되나요?</h3>
+                    <p class="text-gray-700">정부 보안 기준에 따른 암호화 처리와 개인정보보호법을 준수하여 안전하게 관리됩니다. 플랫폼 연동 시에도 최소한의 정보만 수집합니다.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 gradient-bg text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">🚀 지금 바로 체험해보세요!</h2>
+            <p class="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+                복잡한 사업자등록을 1분만에! 
+                혁신적인 경험을 직접 체험해보세요.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="register.html" class="bg-white text-blue-600 px-8 py-4 rounded-xl font-semibold hover:bg-gray-100 transition-all transform hover:scale-105 shadow-lg">
+                    🎯 사업자등록 체험하기
+                </a>
+                <a href="data-analysis.html" class="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold hover:bg-white hover:text-blue-600 transition-all">
+                    📊 데이터 분석 보기
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4 text-center">
+            <div class="mb-6">
+                <div class="flex items-center justify-center space-x-3 mb-4">
+                    <div class="w-10 h-10 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
+                        <span class="text-white font-bold text-lg">C</span>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold">크리에이터 플랫폼</h3>
+                        <p class="text-sm text-gray-400">대구광역시 규제혁신 프로젝트</p>
+                    </div>
+                </div>
+                <p class="text-gray-400 max-w-2xl mx-auto">
+                    1인 크리에이터를 위한 원스톱 사업자등록 플랫폼으로 
+                    대구시를 디지털 경제의 중심지로 만들어갑니다.
+                </p>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-6 text-gray-400">
+                <p>&copy; 2025 대구광역시 규제혁신 아이디어 공모전. All rights reserved.</p>
+                <p class="mt-2 text-sm">
+                    문의: angellimsc@korea.kr | 전화: 053-803-5859
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = {
+                name: document.getElementById('contactName').value,
+                phone: document.getElementById('contactPhone').value,
+                email: document.getElementById('contactEmail').value,
+                type: document.getElementById('inquiryType').value,
+                subject: document.getElementById('contactSubject').value,
+                message: document.getElementById('contactMessage').value,
+                timestamp: new Date().toISOString()
+            };
+            
+            // Simulate form submission
+            console.log('문의 접수:', formData);
+            
+            // Show success message
+            alert('문의가 정상적으로 접수되었습니다!\n담당자가 확인 후 24시간 내에 연락드리겠습니다.');
+            
+            // Reset form
+            this.reset();
+        });
+    </script>
+</body>
+</html>

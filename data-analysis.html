@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>네이버 데이터랩 트렌드 분석 보고서 - 대구시 규제혁신 분야별 검색 동향</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard.css" rel="stylesheet">
+    <style>
+        body { font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif; }
+        .report-header { background: linear-gradient(135deg, #1e40af 0%, #3730a3 100%); }
+        .data-card { transition: all 0.3s ease; }
+        .data-card:hover { transform: translateY(-2px); }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-lg flex items-center justify-center">
+                        <span class="text-white font-bold text-lg">📊</span>
+                    </div>
+                    <div>
+                        <h1 class="text-xl font-bold text-gray-900">네이버 데이터랩 분석</h1>
+                        <p class="text-xs text-gray-500">대구시 규제혁신 분야별 검색 동향</p>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="index.html" class="text-gray-700 hover:text-blue-600">홈</a>
+                    <a href="register.html" class="text-gray-700 hover:text-blue-600">등록체험</a>
+                    <a href="contact.html" class="text-gray-700 hover:text-blue-600">문의</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Report Title -->
+    <section class="report-header text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-8">
+                <h1 class="text-3xl md:text-4xl font-bold mb-4">네이버 데이터랩 기반 시장 동향 분석</h1>
+                <p class="text-lg text-blue-100 mb-6">2023년 1월 ~ 2025년 4월 (28개월간) 대구시 규제혁신 공모전 분야별 검색 트렌드 분석</p>
+                <div class="bg-white/10 backdrop-blur-sm rounded-lg p-2 inline-block">
+                    <span class="text-sm text-blue-100">데이터 출처: 네이버 데이터랩 검색어 트렌드 API</span>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
+                <div class="bg-white/20 backdrop-blur-sm rounded-lg p-4 text-center">
+                    <div class="text-2xl font-bold">28개월</div>
+                    <div class="text-sm text-blue-100">분석 기간</div>
+                </div>
+                <div class="bg-white/20 backdrop-blur-sm rounded-lg p-4 text-center">
+                    <div class="text-2xl font-bold">5개 분야</div>
+                    <div class="text-sm text-blue-100">비교 분석</div>
+                </div>
+                <div class="bg-white/20 backdrop-blur-sm rounded-lg p-4 text-center">
+                    <div class="text-2xl font-bold">400%</div>
+                    <div class="text-sm text-blue-100">최대 증가율</div>
+                </div>
+                <div class="bg-white/20 backdrop-blur-sm rounded-lg p-4 text-center">
+                    <div class="text-2xl font-bold">100%</div>
+                    <div class="text-sm text-blue-100">최고점 달성</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Market Overview -->
+    <section class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">시장 현황 분석</h2>
+                <p class="text-xl text-gray-600">5개 분야별 검색 동향 및 변화 패턴</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="data-card bg-gradient-to-br from-red-50 to-red-100 p-6 rounded-2xl border border-red-200">
+                    <div class="text-4xl mb-4">📈</div>
+                    <h3 class="text-xl font-bold text-red-900 mb-3">신산업 분야</h3>
+                    <ul class="text-red-800 space-y-2 text-sm">
+                        <li>• 2024년 7-10월 최고점 달성 (100%)</li>
+                        <li>• 평균 검색비율: 35.2%</li>
+                        <li>• 2024년 급격한 성장세 확인</li>
+                        <li>• 크리에이터 경제 확산 영향</li>
+                    </ul>
+                </div>
+                
+                <div class="data-card bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-2xl border border-blue-200">
+                    <div class="text-4xl mb-4">📊</div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-3">취업·일자리 분야</h3>
+                    <ul class="text-blue-800 space-y-2 text-sm">
+                        <li>• 최고 평균 검색비율: 28.4%</li>
+                        <li>• 2023년 1월 최고점: 37.7%</li>
+                        <li>• 지속적 안정적 관심도 유지</li>
+                        <li>• 계절별 변동성 낮음</li>
+                    </ul>
+                </div>
+                
+                <div class="data-card bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-2xl border border-green-200">
+                    <div class="text-4xl mb-4">🏪</div>
+                    <h3 class="text-xl font-bold text-green-900 mb-3">중소기업·소상공인</h3>
+                    <ul class="text-green-800 space-y-2 text-sm">
+                        <li>• 평균 검색비율: 8.7%</li>
+                        <li>• 세부 분석 시 85.2% (배달, 자영업)</li>
+                        <li>• 2023년 3월 최고점: 13.8%</li>
+                        <li>• 실제 관심도와 괴리 존재</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8 mt-8">
+                <div class="data-card bg-gradient-to-br from-purple-50 to-purple-100 p-6 rounded-2xl border border-purple-200">
+                    <div class="text-4xl mb-4">🏠</div>
+                    <h3 class="text-xl font-bold text-purple-900 mb-3">일상생활 분야</h3>
+                    <ul class="text-purple-800 space-y-2 text-sm">
+                        <li>• 평균 검색비율: 10.8%</li>
+                        <li>• 주차, 교통 관련 이슈 중심</li>
+                        <li>• 여름철(5월) 최고점: 13.1%</li>
+                        <li>• 계절성 변동 패턴 확인</li>
+                    </ul>
+                </div>
+                
+                <div class="data-card bg-gradient-to-br from-gray-50 to-gray-100 p-6 rounded-2xl border border-gray-200">
+                    <div class="text-4xl mb-4">🏛️</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">시민복지 분야</h3>
+                    <ul class="text-gray-800 space-y-2 text-sm">
+                        <li>• 평균 검색비율: 7.2%</li>
+                        <li>• 2023년 3월 최고점: 9.3%</li>
+                        <li>• 5개 분야 중 가장 낮은 관심도</li>
+                        <li>• 지속적 저관심 상태 유지</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Charts Section -->
+    <section class="py-12 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">데이터 시각화</h2>
+            
+            <div class="grid lg:grid-cols-2 gap-8">
+                <!-- Trend Chart -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6">📈 28개월 시계열 트렌드</h3>
+                    <div class="h-80">
+                        <canvas id="trendChart"></canvas>
+                    </div>
+                    <div class="mt-4 p-4 bg-gray-50 rounded-lg">
+                        <p class="text-sm text-gray-700 font-medium">주요 변곡점:</p>
+                        <p class="text-sm text-gray-600">• 2024년 7월: 신산업 분야 급상승 시작</p>
+                        <p class="text-sm text-gray-600">• 2024년 10월: 신산업 분야 최고점 달성 (100%)</p>
+                    </div>
+                </div>
+                
+                <!-- Comparison Chart -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6">📊 분야별 평균 검색비율</h3>
+                    <div class="h-80">
+                        <canvas id="comparisonChart"></canvas>
+                    </div>
+                    <div class="mt-4 p-4 bg-gray-50 rounded-lg">
+                        <p class="text-sm text-gray-700 font-medium">분석 결과:</p>
+                        <p class="text-sm text-gray-600">• 신산업: 35.2% (급성장형)</p>
+                        <p class="text-sm text-gray-600">• 취업일자리: 28.4% (안정형)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Data Table -->
+    <section class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">상세 데이터</h2>
+            
+            <!-- Ranking Table -->
+            <div class="bg-white rounded-2xl shadow-lg overflow-hidden mb-8">
+                <div class="p-6 border-b bg-gray-50">
+                    <h3 class="text-xl font-bold text-gray-900">분야별 검색량 순위 및 증감률</h3>
+                    <p class="text-gray-600 mt-1">2023년 1월 ~ 2025년 4월 분석 결과</p>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full">
+                        <thead class="bg-gray-100">
+                            <tr>
+                                <th class="px-6 py-4 text-left text-sm font-semibold text-gray-900">순위</th>
+                                <th class="px-6 py-4 text-left text-sm font-semibold text-gray-900">분야</th>
+                                <th class="px-6 py-4 text-left text-sm font-semibold text-gray-900">평균 검색비율</th>
+                                <th class="px-6 py-4 text-left text-sm font-semibold text-gray-900">최고점</th>
+                                <th class="px-6 py-4 text-left text-sm font-semibold text-gray-900">증감 패턴</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-200">
+                            <tr class="hover:bg-red-50">
+                                <td class="px-6 py-4 text-sm font-medium text-gray-900">1위</td>
+                                <td class="px-6 py-4 text-sm text-red-700 font-medium">신산업</td>
+                                <td class="px-6 py-4 text-sm text-gray-900">35.2%</td>
+                                <td class="px-6 py-4 text-sm text-red-600 font-bold">100% (2024.10)</td>
+                                <td class="px-6 py-4 text-sm text-gray-600">2024년 7월부터 급상승</td>
+                            </tr>
+                            <tr class="hover:bg-blue-50">
+                                <td class="px-6 py-4 text-sm font-medium text-gray-900">2위</td>
+                                <td class="px-6 py-4 text-sm text-blue-700 font-medium">취업일자리</td>
+                                <td class="px-6 py-4 text-sm text-gray-900">28.4%</td>
+                                <td class="px-6 py-4 text-sm text-blue-600 font-bold">37.7% (2023.1)</td>
+                                <td class="px-6 py-4 text-sm text-gray-600">안정적 고관심 유지</td>
+                            </tr>
+                            <tr class="hover:bg-purple-50">
+                                <td class="px-6 py-4 text-sm font-medium text-gray-900">3위</td>
+                                <td class="px-6 py-4 text-sm text-purple-700 font-medium">일상생활</td>
+                                <td class="px-6 py-4 text-sm text-gray-900">10.8%</td>
+                                <td class="px-6 py-4 text-sm text-purple-600 font-bold">13.1% (2023.5)</td>
+                                <td class="px-6 py-4 text-sm text-gray-600">계절성 변동</td>
+                            </tr>
+                            <tr class="hover:bg-green-50">
+                                <td class="px-6 py-4 text-sm font-medium text-gray-900">4위</td>
+                                <td class="px-6 py-4 text-sm text-green-700 font-medium">중소기업·소상공인</td>
+                                <td class="px-6 py-4 text-sm text-gray-900">8.7%</td>
+                                <td class="px-6 py-4 text-sm text-green-600 font-bold">13.8% (2023.3)</td>
+                                <td class="px-6 py-4 text-sm text-gray-600">점진적 하락 추세</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-6 py-4 text-sm font-medium text-gray-900">5위</td>
+                                <td class="px-6 py-4 text-sm text-gray-700 font-medium">시민복지</td>
+                                <td class="px-6 py-4 text-sm text-gray-900">7.2%</td>
+                                <td class="px-6 py-4 text-sm text-gray-600 font-bold">9.3% (2023.3)</td>
+                                <td class="px-6 py-4 text-sm text-gray-600">지속적 저관심</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Monthly Data Table -->
+            <div class="bg-white rounded-2xl shadow-lg overflow-hidden mb-8">
+                <div class="p-6 border-b bg-gray-50">
+                    <h3 class="text-xl font-bold text-gray-900">분야별 월간 검색량 변화</h3>
+                    <p class="text-gray-600 mt-1">최근 12개월 데이터 (2024.5 ~ 2025.4)</p>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full">
+                        <thead class="bg-gray-100">
+                            <tr>
+                                <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">기간</th>
+                                <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">신산업</th>
+                                <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">취업일자리</th>
+                                <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">일상생활</th>
+                                <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">중소기업</th>
+                                <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">시민복지</th>
+                            </tr>
+                        </thead>
+                        <tbody id="dataTable" class="bg-white divide-y divide-gray-200">
+                            <!-- Data will be populated by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <!-- Download Section -->
+            <div class="text-center">
+                <div class="inline-flex flex-wrap gap-4">
+                    <button onclick="downloadData('csv')" class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors font-semibold shadow-md">
+                        📄 CSV 다운로드
+                    </button>
+                    <button onclick="downloadData('json')" class="bg-indigo-600 text-white px-6 py-3 rounded-lg hover:bg-indigo-700 transition-colors font-semibold shadow-md">
+                        💾 JSON 다운로드
+                    </button>
+                    <button onclick="generateReport()" class="bg-gray-700 text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition-colors font-semibold shadow-md">
+                        📊 상세 보고서 생성
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Findings -->
+    <section class="py-12 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">주요 발견사항</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- 2024년 급상승 분석 -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg">
+                    <h3 class="text-2xl font-bold text-red-900 mb-6 flex items-center">
+                        <span class="text-3xl mr-3">📈</span>
+                        2024년 신산업 분야 급상승 분석
+                    </h3>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-red-50 p-4 rounded-lg border-l-4 border-red-400">
+                            <h4 class="font-semibold text-red-900 mb-1">급상승 시점</h4>
+                            <p class="text-red-800 text-sm">2024년 7월 시작, 10월 최고점 달성 (100%)</p>
+                        </div>
+                        
+                        <div class="bg-orange-50 p-4 rounded-lg border-l-4 border-orange-400">
+                            <h4 class="font-semibold text-orange-900 mb-1">증가율</h4>
+                            <p class="text-orange-800 text-sm">전년 동기 대비 약 400% 증가 기록</p>
+                        </div>
+                        
+                        <div class="bg-yellow-50 p-4 rounded-lg border-l-4 border-yellow-400">
+                            <h4 class="font-semibold text-yellow-900 mb-1">추정 원인</h4>
+                            <p class="text-yellow-800 text-sm">크리에이터 경제 확산, 부업 관심 증가</p>
+                        </div>
+                        
+                        <div class="bg-green-50 p-4 rounded-lg border-l-4 border-green-400">
+                            <h4 class="font-semibold text-green-900 mb-1">현재 상황</h4>
+                            <p class="text-green-800 text-sm">2025년도 높은 수준 지속 (점진적 안정화)</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 세부 키워드 분석 -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg">
+                    <h3 class="text-2xl font-bold text-blue-900 mb-6 flex items-center">
+                        <span class="text-3xl mr-3">🔍</span>
+                        세부 키워드 분석 결과
+                    </h3>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-green-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-green-900 mb-2">중소기업 세부 (85.2%)</h4>
+                            <p class="text-green-700 text-sm">배달, 자영업, 카페 등 구체적 관심 높음</p>
+                        </div>
+                        
+                        <div class="bg-blue-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-blue-900 mb-2">신산업 세부 (18.1%)</h4>
+                            <p class="text-blue-700 text-sm">블로그, 인플루언서, 디지털 중심</p>
+                        </div>
+                        
+                        <div class="bg-purple-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-purple-900 mb-2">복지 관련 (6.4%)</h4>
+                            <p class="text-purple-700 text-sm">결혼, 의료, 건강 분야 관심</p>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-gray-900 mb-2">규제 관련 (1.4%)</h4>
+                            <p class="text-gray-700 text-sm">인허가, 신고, 등록 등 직접적 규제 이슈</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Data Methodology -->
+    <section class="py-12 bg-white border-t border-gray-200">
+        <div class="container mx-auto px-4">
+            <h2 class="text-2xl font-bold text-gray-900 mb-6 text-center">데이터 출처 및 분석 방법론</h2>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-blue-600 text-2xl">📊</span>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">데이터 출처</h3>
+                    <p class="text-gray-600 text-sm">네이버 데이터랩 검색어 트렌드 API<br>전국 단위 검색량 기준</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-green-600 text-2xl">📅</span>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">분석 기간</h3>
+                    <p class="text-gray-600 text-sm">2023년 1월 1일 ~ 2025년 4월 30일<br>총 28개월간 연속 데이터</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-purple-600 text-2xl">🔬</span>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">분석 방법</h3>
+                    <p class="text-gray-600 text-sm">분야별 대표 키워드 그룹핑<br>상대적 검색량 비교 분석</p>
+                </div>
+            </div>
+            
+            <div class="mt-8 p-6 bg-gray-50 rounded-lg">
+                <h4 class="font-semibold text-gray-900 mb-2">데이터 신뢰성 및 제약사항</h4>
+                <ul class="text-gray-700 text-sm space-y-1">
+                    <li>• 전국 단위 검색 트렌드로 대구 지역 특화 데이터는 별도 분석 필요</li>
+                    <li>• 네이버 데이터랩 키워드 제약(5글자 이하)으로 일부 키워드 축약 적용</li>
+                    <li>• 상대적 검색비율 기준으로 절대 검색량은 별도 산출 필요</li>
+                    <li>• 계절성 및 이벤트성 급증 구간에 대한 정성적 분석 병행 권장</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-gray-400 mb-2">
+                대구광역시 규제혁신 아이디어 공모전 | 네이버 데이터랩 기반 시장 분석 보고서
+            </p>
+            <p class="text-gray-500 text-sm">
+                본 분석은 객관적 검색 데이터를 기반으로 작성되었으며, 실제 정책 수립 시 추가적인 정성 분석이 필요합니다.
+            </p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/data-analysis.js"></script>
+</body>
+</html>

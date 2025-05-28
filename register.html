@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사업자등록 체험하기 - 크리에이터 플랫폼</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard.css" rel="stylesheet">
+    <style>
+        body { font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif; }
+        .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .step-active { background: linear-gradient(45deg, #3b82f6, #8b5cf6); }
+        .step-completed { background: linear-gradient(45deg, #10b981, #3b82f6); }
+        .step-pending { background: #e5e7eb; }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
+                        <span class="text-white font-bold text-lg">C</span>
+                    </div>
+                    <div>
+                        <h1 class="text-xl font-bold text-gray-900">크리에이터 플랫폼</h1>
+                        <p class="text-xs text-gray-500">사업자등록 체험하기</p>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="index.html" class="text-gray-700 hover:text-blue-600">홈</a>
+                    <a href="data-analysis.html" class="text-gray-700 hover:text-blue-600">데이터분석</a>
+                    <a href="contact.html" class="text-gray-700 hover:text-blue-600">문의</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Progress Bar -->
+    <div class="bg-white border-b">
+        <div class="container mx-auto px-4 py-6">
+            <div class="flex items-center justify-between mb-4">
+                <h2 class="text-2xl font-bold text-gray-900">🚀 사업자등록 시뮬레이션</h2>
+                <div class="text-sm text-gray-500">
+                    <span id="currentStep">1</span> / 4 단계
+                </div>
+            </div>
+            
+            <div class="flex items-center space-x-4">
+                <!-- Step 1 -->
+                <div class="flex items-center">
+                    <div id="step1" class="step-active w-10 h-10 rounded-full flex items-center justify-center text-white font-bold">1</div>
+                    <span class="ml-2 text-sm font-medium text-gray-900">기본정보</span>
+                </div>
+                <div class="flex-1 h-1 bg-gray-200 rounded">
+                    <div id="progress1" class="h-1 bg-blue-500 rounded transition-all duration-300" style="width: 25%"></div>
+                </div>
+                
+                <!-- Step 2 -->
+                <div class="flex items-center">
+                    <div id="step2" class="step-pending w-10 h-10 rounded-full flex items-center justify-center text-gray-500 font-bold">2</div>
+                    <span class="ml-2 text-sm font-medium text-gray-500">플랫폼연동</span>
+                </div>
+                <div class="flex-1 h-1 bg-gray-200 rounded">
+                    <div id="progress2" class="h-1 bg-blue-500 rounded transition-all duration-300" style="width: 0%"></div>
+                </div>
+                
+                <!-- Step 3 -->
+                <div class="flex items-center">
+                    <div id="step3" class="step-pending w-10 h-10 rounded-full flex items-center justify-center text-gray-500 font-bold">3</div>
+                    <span class="ml-2 text-sm font-medium text-gray-500">업종분류</span>
+                </div>
+                <div class="flex-1 h-1 bg-gray-200 rounded">
+                    <div id="progress3" class="h-1 bg-blue-500 rounded transition-all duration-300" style="width: 0%"></div>
+                </div>
+                
+                <!-- Step 4 -->
+                <div class="flex items-center">
+                    <div id="step4" class="step-pending w-10 h-10 rounded-full flex items-center justify-center text-gray-500 font-bold">4</div>
+                    <span class="ml-2 text-sm font-medium text-gray-500">완료확인</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container mx-auto px-4 py-8">
+        <div class="grid lg:grid-cols-2 gap-8">
+            <!-- Left: Form Area -->
+            <div class="space-y-6">
+                <!-- Step 1: Basic Info -->
+                <div id="stepContent1" class="bg-white rounded-2xl p-8 shadow-lg">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6">📝 기본정보 입력</h3>
+                    
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">이름 *</label>
+                            <input type="text" id="userName" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="홍길동">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">생년월일 *</label>
+                            <input type="date" id="userBirth" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">주소 *</label>
+                            <input type="text" id="userAddress" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="대구광역시 북구...">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">이메일 *</label>
+                            <input type="email" id="userEmail" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="example@email.com">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">전화번호 *</label>
+                            <input type="tel" id="userPhone" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="010-1234-5678">
+                        </div>
+                        
+                        <div class="bg-blue-50 p-4 rounded-lg">
+                            <div class="flex items-center mb-2">
+                                <span class="text-blue-600 mr-2">💡</span>
+                                <span class="font-medium text-blue-900">자동완성 지원</span>
+                            </div>
+                            <p class="text-sm text-blue-700">실제 서비스에서는 본인인증을 통해 정보가 자동 입력됩니다.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 2: Platform Selection -->
+                <div id="stepContent2" class="bg-white rounded-2xl p-8 shadow-lg hidden">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6">🔗 활동 플랫폼 선택</h3>
+                    <p class="text-gray-600 mb-6">현재 활동 중인 플랫폼을 선택해주세요 (중복선택 가능)</p>
+                    
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+                        <div class="platform-card bg-gradient-to-br from-red-50 to-red-100 p-4 rounded-xl text-center cursor-pointer border-2 border-transparent hover:border-red-300 transition-all" data-platform="youtube">
+                            <div class="text-4xl mb-2">📺</div>
+                            <h4 class="font-semibold text-gray-900">YouTube</h4>
+                            <p class="text-xs text-gray-600 mt-1">동영상 콘텐츠</p>
+                            <div class="mt-2">
+                                <input type="checkbox" id="platform-youtube" class="hidden">
+                                <label for="platform-youtube" class="platform-checkbox bg-white border-2 border-gray-300 rounded w-6 h-6 inline-block relative">
+                                    <span class="checkmark hidden absolute inset-0 text-green-500 text-lg">✓</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="platform-card bg-gradient-to-br from-pink-50 to-pink-100 p-4 rounded-xl text-center cursor-pointer border-2 border-transparent hover:border-pink-300 transition-all" data-platform="instagram">
+                            <div class="text-4xl mb-2">📷</div>
+                            <h4 class="font-semibold text-gray-900">Instagram</h4>
+                            <p class="text-xs text-gray-600 mt-1">사진/스토리</p>
+                            <div class="mt-2">
+                                <input type="checkbox" id="platform-instagram" class="hidden">
+                                <label for="platform-instagram" class="platform-checkbox bg-white border-2 border-gray-300 rounded w-6 h-6 inline-block relative">
+                                    <span class="checkmark hidden absolute inset-0 text-green-500 text-lg">✓</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="platform-card bg-gradient-to-br from-green-50 to-green-100 p-4 rounded-xl text-center cursor-pointer border-2 border-transparent hover:border-green-300 transition-all" data-platform="naver">
+                            <div class="text-4xl mb-2">📝</div>
+                            <h4 class="font-semibold text-gray-900">Naver</h4>
+                            <p class="text-xs text-gray-600 mt-1">블로그/포스트</p>
+                            <div class="mt-2">
+                                <input type="checkbox" id="platform-naver" class="hidden">
+                                <label for="platform-naver" class="platform-checkbox bg-white border-2 border-gray-300 rounded w-6 h-6 inline-block relative">
+                                    <span class="checkmark hidden absolute inset-0 text-green-500 text-lg">✓</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="platform-card bg-gradient-to-br from-yellow-50 to-yellow-100 p-4 rounded-xl text-center cursor-pointer border-2 border-transparent hover:border-yellow-300 transition-all" data-platform="kakao">
+                            <div class="text-4xl mb-2">💬</div>
+                            <h4 class="font-semibold text-gray-900">Kakao</h4>
+                            <p class="text-xs text-gray-600 mt-1">스토리/콘텐츠</p>
+                            <div class="mt-2">
+                                <input type="checkbox" id="platform-kakao" class="hidden">
+                                <label for="platform-kakao" class="platform-checkbox bg-white border-2 border-gray-300 rounded w-6 h-6 inline-block relative">
+                                    <span class="checkmark hidden absolute inset-0 text-green-500 text-lg">✓</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="platformInfo" class="bg-blue-50 p-4 rounded-lg hidden">
+                        <h4 class="font-semibold text-blue-900 mb-2">📊 선택된 플랫폼 정보</h4>
+                        <div id="selectedPlatforms" class="space-y-2"></div>
+                    </div>
+                </div>
+
+                <!-- Step 3: Business Type -->
+                <div id="stepContent3" class="bg-white rounded-2xl p-8 shadow-lg hidden">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6">🎯 업종 분류</h3>
+                    <p class="text-gray-600 mb-6">AI가 분석한 추천 업종입니다</p>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-gradient-to-r from-blue-50 to-purple-50 p-6 rounded-xl border-2 border-blue-200">
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="flex items-center space-x-3">
+                                    <span class="text-2xl">🤖</span>
+                                    <div>
+                                        <h4 class="font-bold text-blue-900">AI 추천 업종</h4>
+                                        <p class="text-sm text-blue-700">콘텐츠 분석 기반 자동 추천</p>
+                                    </div>
+                                </div>
+                                <span class="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">추천</span>
+                            </div>
+                            <div id="recommendedBusiness" class="bg-white p-4 rounded-lg">
+                                <h5 class="font-semibold text-gray-900">정보서비스업 > 인터넷 동영상 및 방송 프로그램 제작업</h5>
+                                <p class="text-sm text-gray-600 mt-1">유튜브 등 동영상 플랫폼 활동에 최적화된 업종</p>
+                                <div class="mt-3 text-sm">
+                                    <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs mr-2">세율 우대</span>
+                                    <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">간편세무</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-3">
+                            <h4 class="font-semibold text-gray-900">기타 선택 가능한 업종</h4>
+                            <div class="space-y-2">
+                                <label class="flex items-center p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100">
+                                    <input type="radio" name="businessType" value="content" class="mr-3">
+                                    <span>콘텐츠 제작 및 배급업</span>
+                                </label>
+                                <label class="flex items-center p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100">
+                                    <input type="radio" name="businessType" value="advertising" class="mr-3">
+                                    <span>온라인 광고업</span>
+                                </label>
+                                <label class="flex items-center p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100">
+                                    <input type="radio" name="businessType" value="education" class="mr-3">
+                                    <span>온라인 교육 서비스업</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 4: Completion -->
+                <div id="stepContent4" class="bg-white rounded-2xl p-8 shadow-lg hidden">
+                    <div class="text-center space-y-6">
+                        <div class="text-6xl">🎉</div>
+                        <h3 class="text-3xl font-bold text-gray-900">축하합니다!</h3>
+                        <p class="text-xl text-gray-600">사업자등록 신청이 완료되었습니다</p>
+                        
+                        <div class="bg-gradient-to-r from-green-50 to-blue-50 p-6 rounded-xl">
+                            <h4 class="font-bold text-lg mb-4">📊 처리 결과</h4>
+                            <div class="grid grid-cols-2 gap-4 text-center">
+                                <div>
+                                    <div class="text-2xl font-bold text-green-600">24시간</div>
+                                    <div class="text-sm text-gray-600">예상 처리시간</div>
+                                </div>
+                                <div>
+                                    <div class="text-2xl font-bold text-blue-600">9일</div>
+                                    <div class="text-sm text-gray-600">절약된 시간</div>
+                                </div>
+                                <div>
+                                    <div class="text-2xl font-bold text-purple-600">₩50만</div>
+                                    <div class="text-sm text-gray-600">절약된 비용</div>
+                                </div>
+                                <div>
+                                    <div class="text-2xl font-bold text-orange-600">95%</div>
+                                    <div class="text-sm text-gray-600">만족도</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-3">
+                            <button onclick="window.location.href='data-analysis.html'" class="w-full bg-blue-600 text-white py-3 px-6 rounded-lg hover:bg-blue-700 transition-colors font-semibold">
+                                📊 데이터 분석 보기
+                            </button>
+                            <button onclick="restartSimulation()" class="w-full border-2 border-gray-300 text-gray-700 py-3 px-6 rounded-lg hover:bg-gray-50 transition-colors font-semibold">
+                                🔄 다시 체험하기
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Navigation Buttons -->
+                <div class="flex justify-between">
+                    <button id="prevBtn" class="bg-gray-300 text-gray-700 px-6 py-3 rounded-lg hover:bg-gray-400 transition-colors font-semibold hidden">
+                        ← 이전단계
+                    </button>
+                    <button id="nextBtn" class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors font-semibold ml-auto">
+                        다음단계 →
+                    </button>
+                </div>
+            </div>
+
+            <!-- Right: Preview Area -->
+            <div class="space-y-6">
+                <!-- Real-time Preview -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg sticky top-24">
+                    <h3 class="text-xl font-bold text-gray-900 mb-6">🔍 실시간 미리보기</h3>
+                    
+                    <div class="bg-gradient-to-br from-blue-50 to-purple-50 p-6 rounded-xl border-2 border-dashed border-blue-200">
+                        <h4 class="font-bold text-blue-900 mb-4">📄 사업자등록증 미리보기</h4>
+                        <div class="space-y-3 text-sm">
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">사업자번호:</span>
+                                <span class="font-medium">123-45-67890</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">상호명:</span>
+                                <span id="previewName" class="font-medium">-</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">업종:</span>
+                                <span id="previewBusiness" class="font-medium">미선택</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">주소:</span>
+                                <span id="previewAddress" class="font-medium text-xs">-</span>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-6 pt-4 border-t border-blue-200">
+                            <div class="space-y-2 text-sm">
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">예상 처리시간:</span>
+                                    <span class="font-bold text-green-600">24시간</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">절약 시간:</span>
+                                    <span class="font-bold text-blue-600">9일</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">절약 비용:</span>
+                                    <span class="font-bold text-purple-600">50만원</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- User Statistics -->
+                <div class="bg-white rounded-2xl p-6 shadow-lg">
+                    <h4 class="font-bold text-gray-900 mb-4">📊 사용자 통계</h4>
+                    <div class="space-y-3 text-sm">
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">평균 완료시간:</span>
+                            <span class="font-semibold">5분</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">사용자 만족도:</span>
+                            <span class="font-semibold">⭐⭐⭐⭐⭐ 4.8/5.0</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">오늘 완료자:</span>
+                            <span class="font-semibold text-green-600">+127명</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Help Section -->
+                <div class="bg-yellow-50 rounded-2xl p-6 border border-yellow-200">
+                    <h4 class="font-bold text-yellow-800 mb-3">💡 도움말</h4>
+                    <div class="space-y-2 text-sm text-yellow-700">
+                        <p>• 모든 정보는 실제 시스템과 동일하게 검증됩니다</p>
+                        <p>• 플랫폼 연동으로 수익 데이터가 자동 수집됩니다</p>
+                        <p>• AI가 콘텐츠를 분석하여 최적 업종을 추천합니다</p>
+                    </div>
+                    <div class="mt-4 space-y-2">
+                        <button class="text-blue-600 hover:text-blue-800 text-sm font-medium">❓ 자주 묻는 질문</button>
+                        <button class="text-blue-600 hover:text-blue-800 text-sm font-medium block">💬 실시간 채팅</button>
+                        <button class="text-blue-600 hover:text-blue-800 text-sm font-medium block">📹 동영상 가이드</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="js/register.js"></script>
+</body>
+</html>

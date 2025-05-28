@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1인 크리에이터 통합 사업자등록 플랫폼 - 대구광역시</title>
+    <meta name="description" content="복잡한 사업자등록을 1일 내 완료! 네이버 데이터랩 분석 기반 2024년 신산업 분야 400% 급증 대응 솔루션">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Pretendard Font -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard.css" rel="stylesheet">
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- Custom Styles -->
+    <style>
+        body { font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif; }
+        .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .card-hover { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .card-hover:hover { transform: translateY(-5px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1); }
+        .animate-float { animation: float 3s ease-in-out infinite; }
+        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-10px); } }
+        .text-gradient { background: linear-gradient(45deg, #667eea, #764ba2); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        
+        /* 차트 컨테이너 높이 고정 */
+        .chart-container {
+            position: relative !important;
+            height: 250px !important;
+            width: 100% !important;
+            max-height: 250px !important;
+            overflow: hidden !important;
+        }
+        
+        .chart-container canvas {
+            max-height: 250px !important;
+            height: 250px !important;
+        }
+    </style>
+    
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#2563eb',
+                        'primary-dark': '#1e40af',
+                        'secondary': '#10b981',
+                        'accent': '#f59e0b'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
+                        <span class="text-white font-bold text-lg">C</span>
+                    </div>
+                    <div>
+                        <h1 class="text-xl font-bold text-gray-900">크리에이터 플랫폼</h1>
+                        <p class="text-xs text-gray-500">대구광역시 규제혁신 프로젝트</p>
+                    </div>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-gray-700 hover:text-primary font-medium transition-colors">홈</a>
+                    <a href="register.html" class="text-gray-700 hover:text-primary font-medium transition-colors">등록체험</a>
+                    <a href="data-analysis.html" class="text-gray-700 hover:text-primary font-medium transition-colors">데이터분석</a>
+                    <a href="contact.html" class="text-gray-700 hover:text-primary font-medium transition-colors">문의</a>
+                    <button id="darkModeToggle" class="p-2 rounded-lg hover:bg-gray-100 transition-colors">
+                        <span class="text-xl">🌙</span>
+                    </button>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button id="mobileMenuBtn" class="md:hidden p-2 rounded-lg hover:bg-gray-100">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="hidden md:hidden mt-4 py-4 border-t">
+                <a href="#home" class="block py-2 text-gray-700 hover:text-primary">홈</a>
+                <a href="register.html" class="block py-2 text-gray-700 hover:text-primary">등록체험</a>
+                <a href="data-analysis.html" class="block py-2 text-gray-700 hover:text-primary">데이터분석</a>
+                <a href="contact.html" class="block py-2 text-gray-700 hover:text-primary">문의</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="gradient-bg text-white py-20">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <!-- Text Content -->
+                <div class="space-y-6">
+                    <div class="space-y-4">
+                        <div class="inline-flex items-center bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 text-sm">
+                            <span class="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></span>
+                            2024년 신산업 분야 400% 급증
+                        </div>
+                        <h1 class="text-4xl md:text-6xl font-bold leading-tight">
+                            1분만에<br>
+                            <span class="text-gradient bg-gradient-to-r from-yellow-300 to-orange-300 bg-clip-text text-transparent">사업자등록</span><br>
+                            완료!
+                        </h1>
+                        <p class="text-xl text-blue-100 leading-relaxed">
+                            복잡한 절차는 그만! 1인 크리에이터를 위한<br>
+                            원스톱 사업자등록 플랫폼으로 <strong>90% 시간 단축</strong>
+                        </p>
+                    </div>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="register.html" class="bg-white text-primary px-8 py-4 rounded-xl font-semibold hover:bg-gray-100 transition-all transform hover:scale-105 text-center shadow-lg">
+                            🚀 사업자등록 체험하기
+                        </a>
+                        <a href="data-analysis.html" class="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold hover:bg-white hover:text-primary transition-all text-center">
+                            📊 데이터 분석 보기
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Chart Preview -->
+                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 animate-float">
+                    <h3 class="text-lg font-semibold mb-4 text-center">📈 네이버 데이터랩 트렌드</h3>
+                    <div class="chart-container" style="position: relative; height: 250px; width: 100%;">
+                        <canvas id="heroChart"></canvas>
+                    </div>
+                    <p class="text-sm text-blue-100 mt-3 text-center">
+                        2024년 신산업 분야 검색량 폭발적 증가 추세
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Metrics -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                    🎯 놀라운 효과를 경험하세요
+                </h2>
+                <p class="text-xl text-gray-600">
+                    데이터로 검증된 혁신적인 성과 지표
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-2xl text-center card-hover">
+                    <div class="text-4xl mb-3">🕐</div>
+                    <div class="text-3xl font-bold text-blue-600 mb-2">90%</div>
+                    <div class="text-gray-700 font-medium">시간 단축</div>
+                    <div class="text-sm text-gray-500 mt-1">10일 → 1일</div>
+                </div>
+                
+                <div class="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-2xl text-center card-hover">
+                    <div class="text-4xl mb-3">💰</div>
+                    <div class="text-3xl font-bold text-green-600 mb-2">150억</div>
+                    <div class="text-gray-700 font-medium">세수 증대</div>
+                    <div class="text-sm text-gray-500 mt-1">연간 효과</div>
+                </div>
+                
+                <div class="bg-gradient-to-br from-purple-50 to-purple-100 p-6 rounded-2xl text-center card-hover">
+                    <div class="text-4xl mb-3">🚀</div>
+                    <div class="text-3xl font-bold text-purple-600 mb-2">3,000명</div>
+                    <div class="text-gray-700 font-medium">창업 지원</div>
+                    <div class="text-sm text-gray-500 mt-1">청년 창업</div>
+                </div>
+                
+                <div class="bg-gradient-to-br from-orange-50 to-orange-100 p-6 rounded-2xl text-center card-hover">
+                    <div class="text-4xl mb-3">👥</div>
+                    <div class="text-3xl font-bold text-orange-600 mb-2">20,000명</div>
+                    <div class="text-gray-700 font-medium">일자리 창출</div>
+                    <div class="text-sm text-gray-500 mt-1">직간접 고용</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                    🔧 핵심 기능
+                </h2>
+                <p class="text-xl text-gray-600">
+                    1인 크리에이터를 위한 맞춤형 솔루션
+                </p>
+            </div>
+            
+            <!-- Feature 1: One-Stop Process -->
+            <div class="bg-white rounded-2xl p-8 mb-8 shadow-lg">
+                <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center">
+                    1️⃣ 원스톱 등록 시스템
+                </h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                            <span class="text-2xl">📝</span>
+                        </div>
+                        <h4 class="font-semibold">정보입력</h4>
+                        <p class="text-sm text-gray-600">기본정보 간편입력</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                            <span class="text-2xl">🔗</span>
+                        </div>
+                        <h4 class="font-semibold">플랫폼연동</h4>
+                        <p class="text-sm text-gray-600">자동 계정 연결</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                            <span class="text-2xl">🎯</span>
+                        </div>
+                        <h4 class="font-semibold">업종선택</h4>
+                        <p class="text-sm text-gray-600">AI 자동 추천</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                            <span class="text-2xl">✅</span>
+                        </div>
+                        <h4 class="font-semibold">완료확인</h4>
+                        <p class="text-sm text-gray-600">즉시 발급</p>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <a href="register.html" class="inline-flex items-center bg-primary text-white px-6 py-3 rounded-lg hover:bg-primary-dark transition-colors">
+                        지금 체험해보기 →
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Feature 2: AI Recommendation -->
+            <div class="grid md:grid-cols-2 gap-8 mb-8">
+                <div class="bg-white rounded-2xl p-8 shadow-lg">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">
+                        2️⃣ AI 기반 업종 추천
+                    </h3>
+                    <p class="text-gray-600 mb-6">
+                        콘텐츠 분석을 통한 자동 업종 분류와 맞춤 세무 가이드 제공
+                    </p>
+                    <div class="space-y-3">
+                        <div class="flex items-center space-x-3">
+                            <span class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center text-sm">🎥</span>
+                            <span class="text-gray-700">동영상 콘텐츠 → 인터넷 방송업</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <span class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center text-sm">📸</span>
+                            <span class="text-gray-700">사진 콘텐츠 → 디지털 콘텐츠 제작업</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <span class="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center text-sm">✍️</span>
+                            <span class="text-gray-700">텍스트 콘텐츠 → 온라인 출판업</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-2xl p-8 shadow-lg">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">
+                        3️⃣ 플랫폼 연동 시스템
+                    </h3>
+                    <p class="text-gray-600 mb-6">
+                        주요 플랫폼과 자동 연동하여 수익 데이터 실시간 관리
+                    </p>
+                    <div class="grid grid-cols-2 gap-3">
+                        <div class="bg-red-50 p-3 rounded-lg text-center">
+                            <span class="text-2xl">📺</span>
+                            <div class="text-sm font-medium mt-1">YouTube</div>
+                        </div>
+                        <div class="bg-pink-50 p-3 rounded-lg text-center">
+                            <span class="text-2xl">📷</span>
+                            <div class="text-sm font-medium mt-1">Instagram</div>
+                        </div>
+                        <div class="bg-green-50 p-3 rounded-lg text-center">
+                            <span class="text-2xl">📝</span>
+                            <div class="text-sm font-medium mt-1">Naver</div>
+                        </div>
+                        <div class="bg-yellow-50 p-3 rounded-lg text-center">
+                            <span class="text-2xl">💬</span>
+                            <div class="text-sm font-medium mt-1">Kakao</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expected Effects -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                    📈 기대효과
+                </h2>
+                <p class="text-xl text-gray-600">
+                    대구시를 크리에이터 중심도시로 만드는 혁신적 변화
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-2xl">
+                    <div class="text-4xl mb-4">📊</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">행정 효율성</h3>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-center">
+                            <span class="text-green-500 mr-2">✓</span>
+                            90% 시간 단축 (10일→1일)
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-green-500 mr-2">✓</span>
+                            80% 업무 자동화
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-green-500 mr-2">✓</span>
+                            95% 오류 감소
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="bg-gradient-to-br from-green-50 to-green-100 p-8 rounded-2xl">
+                    <div class="text-4xl mb-4">💰</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">경제적 효과</h3>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-center">
+                            <span class="text-green-500 mr-2">✓</span>
+                            연간 150억원 세수 증대
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-green-500 mr-2">✓</span>
+                            3,000명 창업 지원
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-green-500 mr-2">✓</span>
+                            20,000명 고용 창출
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="bg-gradient-to-br from-purple-50 to-purple-100 p-8 rounded-2xl">
+                    <div class="text-4xl mb-4">🌟</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">사회적 가치</h3>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-center">
+                            <span class="text-green-500 mr-2">✓</span>
+                            청년 정착 유도 (50% 유출 감소)
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-green-500 mr-2">✓</span>
+                            지역경제 활성화
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-green-500 mr-2">✓</span>
+                            디지털 허브 도시화
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 gradient-bg text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                🚀 혁신의 시작, 지금 바로!
+            </h2>
+            <p class="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+                복잡한 사업자등록은 이제 그만! 1분만에 완료되는 
+                새로운 경험을 직접 체험해보세요.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="register.html" class="bg-white text-primary px-8 py-4 rounded-xl font-semibold hover:bg-gray-100 transition-all transform hover:scale-105 shadow-lg">
+                    🎯 사업자등록 시뮬레이션 체험
+                </a>
+                <a href="data-analysis.html" class="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold hover:bg-white hover:text-primary transition-all">
+                    📊 네이버 데이터랩 분석 보기
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-10 h-10 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
+                            <span class="text-white font-bold text-lg">C</span>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold">크리에이터 플랫폼</h3>
+                            <p class="text-sm text-gray-400">대구광역시 규제혁신 프로젝트</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400">
+                        1인 크리에이터를 위한 원스톱 사업자등록 플랫폼으로 
+                        대구시를 디지털 경제의 중심지로 만들어갑니다.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">퀵 링크</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#home" class="hover:text-white transition-colors">홈</a></li>
+                        <li><a href="register.html" class="hover:text-white transition-colors">등록체험</a></li>
+                        <li><a href="data-analysis.html" class="hover:text-white transition-colors">데이터분석</a></li>
+                        <li><a href="contact.html" class="hover:text-white transition-colors">문의하기</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">문의 정보</h4>
+                    <div class="space-y-2 text-gray-400">
+                        <p>📧 angellimsc@korea.kr</p>
+                        <p>☎️ 053-803-5859</p>
+                        <p>📍 대구광역시 북구 연암로 40</p>
+                        <p>🕐 평일 09:00~18:00</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 대구광역시 규제혁신 아이디어 공모전. All rights reserved.</p>
+                <p class="mt-2 text-sm">
+                    이 웹사이트는 공모전 제안서의 실현 가능성을 보여주기 위한 프로토타입입니다.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTop" class="fixed bottom-6 right-6 bg-primary text-white w-12 h-12 rounded-full shadow-lg hover:bg-primary-dark transition-all transform hover:scale-110 hidden">
+        <svg class="w-6 h-6 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+        </svg>
+    </button>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>

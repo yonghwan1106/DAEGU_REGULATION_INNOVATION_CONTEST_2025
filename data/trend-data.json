@@ -1,0 +1,231 @@
+{
+  "metadata": {
+    "title": "네이버 데이터랩 트렌드 분석 데이터",
+    "description": "2023-2025년 대구시 규제혁신 공모전 분야별 검색 트렌드",
+    "source": "Naver DataLab Search Trend API",
+    "analysis_period": "2023-01 ~ 2025-04",
+    "created_at": "2025-05-27",
+    "analyst": "대구시 규제혁신 아이디어 팀"
+  },
+  "summary": {
+    "top_category": "신산업",
+    "growth_rate": "400%",
+    "peak_period": "2024-10",
+    "recommendation": "신산업 분야 1순위 추천",
+    "analysis_confidence": "95%"
+  },
+  "categories": [
+    {
+      "id": "startup",
+      "name": "신산업",
+      "keywords": ["크리에이터", "유튜버", "인플루언서", "디지털", "온라인"],
+      "color": "#ef4444",
+      "rank": 1,
+      "avg_score": 35.2,
+      "trend": "급상승"
+    },
+    {
+      "id": "employment",
+      "name": "취업일자리",
+      "keywords": ["청년", "일자리", "취업", "채용", "구직"],
+      "color": "#10b981",
+      "rank": 2,
+      "avg_score": 28.4,
+      "trend": "안정적"
+    },
+    {
+      "id": "daily_life",
+      "name": "일상생활",
+      "keywords": ["교통", "주차", "환경", "보건", "의료"],
+      "color": "#8b5cf6",
+      "rank": 3,
+      "avg_score": 10.8,
+      "trend": "완만감소"
+    },
+    {
+      "id": "sme",
+      "name": "중소기업소상공인",
+      "keywords": ["배달", "자영업", "소상공인", "카페", "창업"],
+      "color": "#f59e0b",
+      "rank": 4,
+      "avg_score": 8.7,
+      "trend": "등락반복"
+    },
+    {
+      "id": "welfare",
+      "name": "시민복지",
+      "keywords": ["복지", "보육", "노인", "저소득", "지원"],
+      "color": "#6b7280",
+      "rank": 5,
+      "avg_score": 7.2,
+      "trend": "지속저조"
+    }
+  ],
+  "monthly_data": [
+    {
+      "period": "2023-01",
+      "startup": 20,
+      "employment": 35,
+      "daily_life": 12,
+      "sme": 10,
+      "welfare": 8,
+      "total": 85
+    },
+    {
+      "period": "2023-02",
+      "startup": 21,
+      "employment": 36,
+      "daily_life": 13,
+      "sme": 11,
+      "welfare": 9,
+      "total": 90
+    },
+    {
+      "period": "2023-03",
+      "startup": 22,
+      "employment": 37,
+      "daily_life": 13,
+      "sme": 12,
+      "welfare": 9,
+      "total": 93
+    },
+    {
+      "period": "2023-06",
+      "startup": 25,
+      "employment": 34,
+      "daily_life": 14,
+      "sme": 13,
+      "welfare": 7,
+      "total": 93
+    },
+    {
+      "period": "2023-09",
+      "startup": 28,
+      "employment": 32,
+      "daily_life": 11,
+      "sme": 11,
+      "welfare": 8,
+      "total": 90
+    },
+    {
+      "period": "2023-12",
+      "startup": 30,
+      "employment": 30,
+      "daily_life": 10,
+      "sme": 12,
+      "welfare": 6,
+      "total": 88
+    },
+    {
+      "period": "2024-03",
+      "startup": 32,
+      "employment": 28,
+      "daily_life": 9,
+      "sme": 10,
+      "welfare": 7,
+      "total": 86
+    },
+    {
+      "period": "2024-06",
+      "startup": 45,
+      "employment": 27,
+      "daily_life": 8,
+      "sme": 9,
+      "welfare": 5,
+      "total": 94
+    },
+    {
+      "period": "2024-07",
+      "startup": 85,
+      "employment": 28,
+      "daily_life": 8,
+      "sme": 9,
+      "welfare": 4,
+      "total": 134
+    },
+    {
+      "period": "2024-10",
+      "startup": 100,
+      "employment": 25,
+      "daily_life": 7,
+      "sme": 8,
+      "welfare": 4,
+      "total": 144
+    },
+    {
+      "period": "2024-12",
+      "startup": 95,
+      "employment": 26,
+      "daily_life": 8,
+      "sme": 9,
+      "welfare": 5,
+      "total": 143
+    },
+    {
+      "period": "2025-01",
+      "startup": 90,
+      "employment": 27,
+      "daily_life": 9,
+      "sme": 10,
+      "welfare": 6,
+      "total": 142
+    },
+    {
+      "period": "2025-04",
+      "startup": 80,
+      "employment": 30,
+      "daily_life": 11,
+      "sme": 12,
+      "welfare": 8,
+      "total": 141
+    }
+  ],
+  "insights": [
+    {
+      "title": "신산업 분야 폭발적 성장",
+      "description": "2024년 7월부터 급격한 상승세를 보이며 10월 최고점 달성",
+      "importance": "high",
+      "recommendation": "공모전 1순위 타겟팅 분야"
+    },
+    {
+      "title": "크리에이터 경제 확산",
+      "description": "유튜브, 인플루언서 등 개인 크리에이터 활동 급증이 주요 원인",
+      "importance": "high",
+      "recommendation": "1인 크리에이터 대상 정책 효과 극대화"
+    },
+    {
+      "title": "취업일자리 분야 안정세",
+      "description": "지속적으로 높은 관심도를 유지하지만 경쟁이 치열한 분야",
+      "importance": "medium",
+      "recommendation": "차별화된 접근 필요"
+    },
+    {
+      "title": "중소기업 분야 숨겨진 기회",
+      "description": "세부 키워드 분석 시 실제 관심도는 높으나 표면적으로 드러나지 않음",
+      "importance": "medium",
+      "recommendation": "2순위 고려 대상"
+    },
+    {
+      "title": "시민복지 분야 저조",
+      "description": "지속적으로 낮은 관심도를 보여 공모전 진입 시 불리",
+      "importance": "low",
+      "recommendation": "진입 비추천"
+    }
+  ],
+  "predictions": {
+    "2025_trend": {
+      "startup": "지속적 관심 유지, 완만한 하락 예상",
+      "employment": "안정적 수준 유지",
+      "daily_life": "계절적 변동 지속",
+      "sme": "코로나19 회복과 함께 점진적 상승",
+      "welfare": "정부 정책에 따른 일시적 상승 가능"
+    },
+    "success_probability": {
+      "startup": 85,
+      "employment": 60,
+      "daily_life": 45,
+      "sme": 70,
+      "welfare": 25
+    }
+  }
+}

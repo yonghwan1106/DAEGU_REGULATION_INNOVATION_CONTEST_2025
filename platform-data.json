@@ -1,0 +1,260 @@
+{
+  "platforms": [
+    {
+      "id": "youtube",
+      "name": "YouTube",
+      "icon": "📺",
+      "description": "동영상 콘텐츠 플랫폼",
+      "category": "Video",
+      "api_support": true,
+      "popularity": 95,
+      "recommended_business_type": "정보서비스업 > 인터넷 동영상 및 방송 프로그램 제작업",
+      "average_revenue": "200만원",
+      "subscribers_metric": "구독자",
+      "features": [
+        "광고 수익 분배",
+        "슈퍼챗 후원",
+        "멤버십 운영",
+        "쇼츠 콘텐츠"
+      ],
+      "tax_benefits": [
+        "창작활동비용 세액공제",
+        "소규모 사업자 간편세무"
+      ]
+    },
+    {
+      "id": "instagram",
+      "name": "Instagram",
+      "icon": "📷",
+      "description": "사진/동영상 SNS 플랫폼",
+      "category": "Social Media",
+      "api_support": true,
+      "popularity": 88,
+      "recommended_business_type": "정보서비스업 > 디지털 콘텐츠 제작 및 배급업",
+      "average_revenue": "150만원",
+      "subscribers_metric": "팔로워",
+      "features": [
+        "릴스 크리에이터 펀드",
+        "브랜드 협찬",
+        "라이브 쇼핑",
+        "스토리 광고"
+      ],
+      "tax_benefits": [
+        "디지털콘텐츠 세액감면",
+        "소상공인 지원혜택"
+      ]
+    },
+    {
+      "id": "naver",
+      "name": "Naver Blog",
+      "icon": "📝",
+      "description": "블로그 및 포스트 플랫폼",
+      "category": "Content",
+      "api_support": true,
+      "popularity": 75,
+      "recommended_business_type": "출판업 > 온라인 출판 및 정보 제공업",
+      "average_revenue": "100만원",
+      "subscribers_metric": "방문자",
+      "features": [
+        "애드포스트 수익",
+        "인플루언서 마케팅",
+        "상품 리뷰",
+        "검색 최적화"
+      ],
+      "tax_benefits": [
+        "문화콘텐츠 세액공제",
+        "온라인사업자 우대"
+      ]
+    },
+    {
+      "id": "kakao",
+      "name": "Kakao Story",
+      "icon": "💬",
+      "description": "소셜 스토리 플랫폼",
+      "category": "Social Media",
+      "api_support": true,
+      "popularity": 65,
+      "recommended_business_type": "정보서비스업 > 온라인 정보 제공업",
+      "average_revenue": "80만원",
+      "subscribers_metric": "조회수",
+      "features": [
+        "스토리 펀딩",
+        "브랜드 스토리",
+        "커뮤니티 운영",
+        "이모티콘 판매"
+      ],
+      "tax_benefits": [
+        "신규사업자 세액감면",
+        "소규모 간편세무"
+      ]
+    },
+    {
+      "id": "twitch",
+      "name": "Twitch",
+      "icon": "🎮",
+      "description": "라이브 스트리밍 플랫폼",
+      "category": "Streaming",
+      "api_support": false,
+      "popularity": 70,
+      "recommended_business_type": "정보서비스업 > 인터넷 방송업",
+      "average_revenue": "180만원",
+      "subscribers_metric": "팔로워",
+      "features": [
+        "구독료 수익",
+        "도네이션",
+        "광고 수익",
+        "스폰서십"
+      ],
+      "tax_benefits": [
+        "방송업 세액공제",
+        "개인사업자 우대"
+      ]
+    },
+    {
+      "id": "tiktok",
+      "name": "TikTok",
+      "icon": "📱",
+      "description": "쇼트폼 동영상 플랫폼",
+      "category": "Video",
+      "api_support": false,
+      "popularity": 92,
+      "recommended_business_type": "정보서비스업 > 모바일 콘텐츠 제작업",
+      "average_revenue": "120만원",
+      "subscribers_metric": "팔로워",
+      "features": [
+        "크리에이터 펀드",
+        "라이브 선물",
+        "브랜드 캠페인",
+        "쇼핑 연동"
+      ],
+      "tax_benefits": [
+        "디지털콘텐츠 지원",
+        "청년창업 혜택"
+      ]
+    },
+    {
+      "id": "coupang",
+      "name": "쿠팡 파트너스",
+      "icon": "🛒",
+      "description": "커머스 제휴 플랫폼",
+      "category": "E-commerce",
+      "api_support": true,
+      "popularity": 60,
+      "recommended_business_type": "도매 및 소매업 > 온라인 소매업",
+      "average_revenue": "90만원",
+      "subscribers_metric": "클릭수",
+      "features": [
+        "제휴 수수료",
+        "상품 추천",
+        "링크 마케팅",
+        "데이터 분석"
+      ],
+      "tax_benefits": [
+        "전자상거래 지원",
+        "소규모 면세혜택"
+      ]
+    },
+    {
+      "id": "other",
+      "name": "기타 플랫폼",
+      "icon": "➕",
+      "description": "직접 입력",
+      "category": "Custom",
+      "api_support": false,
+      "popularity": 50,
+      "recommended_business_type": "기타 서비스업",
+      "average_revenue": "변동",
+      "subscribers_metric": "사용자",
+      "features": [
+        "맞춤형 분석",
+        "수동 입력 지원",
+        "다양한 수익모델",
+        "유연한 세무처리"
+      ],
+      "tax_benefits": [
+        "일반 사업자 혜택",
+        "업종별 맞춤 지원"
+      ]
+    }
+  ],
+  "business_types": [
+    {
+      "code": "58221",
+      "name": "인터넷 동영상 및 방송 프로그램 제작업",
+      "category": "정보서비스업",
+      "suitable_platforms": ["youtube", "twitch"],
+      "tax_rate": "10%",
+      "benefits": [
+        "창작활동비용 세액공제 20%",
+        "소규모 사업자 간편세무 적용",
+        "문화콘텐츠 진흥 지원금"
+      ],
+      "requirements": [
+        "개인사업자등록",
+        "저작권 등록 권장",
+        "방송통신위원회 신고"
+      ]
+    },
+    {
+      "code": "58222",
+      "name": "디지털 콘텐츠 제작 및 배급업",
+      "category": "정보서비스업",
+      "suitable_platforms": ["instagram", "tiktok"],
+      "tax_rate": "10%",
+      "benefits": [
+        "디지털콘텐츠 세액감면 15%",
+        "신기술창업 지원혜택",
+        "콘텐츠 진흥원 지원사업"
+      ],
+      "requirements": [
+        "개인사업자등록",
+        "디지털콘텐츠 등록",
+        "지식재산권 관리"
+      ]
+    },
+    {
+      "code": "58111",
+      "name": "온라인 출판 및 정보 제공업",
+      "category": "출판업",
+      "suitable_platforms": ["naver", "kakao"],
+      "tax_rate": "8%",
+      "benefits": [
+        "출판업 세액공제 18%",
+        "문화산업 진흥지원",
+        "온라인사업자 우대혜택"
+      ],
+      "requirements": [
+        "개인사업자등록",
+        "출판업 신고",
+        "ISBN 등록 (선택)"
+      ]
+    },
+    {
+      "code": "47911",
+      "name": "온라인 소매업",
+      "category": "도매 및 소매업",
+      "suitable_platforms": ["coupang", "instagram"],
+      "tax_rate": "10%",
+      "benefits": [
+        "전자상거래 지원혜택",
+        "소규모 면세점 적용",
+        "온라인 판매 세액공제"
+      ],
+      "requirements": [
+        "개인사업자등록",
+        "통신판매업 신고",
+        "전자상거래 등록"
+      ]
+    }
+  ],
+  "demo_statistics": {
+    "total_users": 15420,
+    "completed_registrations": 12890,
+    "average_completion_time": "4.8분",
+    "satisfaction_rate": 4.8,
+    "most_selected_platform": "youtube",
+    "most_selected_business_type": "58221",
+    "daily_new_users": 127,
+    "success_rate": 94.2
+  }
+}
